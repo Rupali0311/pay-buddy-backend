@@ -3,6 +3,7 @@ package com.learn.pay_buddy_backend.model;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Entity
 @Table(name = "users", schema ="pay_buddy")
@@ -20,9 +21,8 @@ public class User {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id", columnDefinition = "INTEGER")
-    private Integer id;
+    @Column(name="id", columnDefinition = "UUID")
+    private UUID id;
 
     @Column(name="name", length = 50)
     private String name;

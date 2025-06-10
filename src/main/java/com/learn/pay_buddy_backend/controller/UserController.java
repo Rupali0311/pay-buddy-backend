@@ -5,6 +5,8 @@ import com.learn.pay_buddy_backend.repository.UserRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.UUID;
+
 @RestController
 public class UserController {
 
@@ -16,7 +18,7 @@ public class UserController {
 
     @GetMapping("/")
     public User getUser(){
-        return userRepository.findById(1L)
+        return userRepository.findById(UUID.fromString("fc858ee0-d69e-4412-a75b-9e7fd0fb73ca"))
                 .orElseThrow(() -> new RuntimeException("User not found!"));
     }
 }
